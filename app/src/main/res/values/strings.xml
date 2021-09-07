@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PrefsLab</string>
+    <string name="defNum">0</string>
+    <string name="buttonDesc">number button</string>
+</resources>
