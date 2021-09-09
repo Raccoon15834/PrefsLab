@@ -35,13 +35,15 @@ public class MainActivity extends AppCompatActivity {
         btn2 = findViewById(R.id.btnTwo);
         scrn = findViewById(R.id.wholeScrn);
         toggle = findViewById(R.id.fontToggle);
-        View.OnClickListener click4 = new TextView.OnClickListener() {
+        TextView.OnClickListener click4 = new TextView.OnClickListener() {
             @Override
             public void onClick(View myView) {
                 Log.d("clicker","view was clicked");
                 TextView vwtxt = (TextView) myView;
                 int currNum = Integer.parseInt(vwtxt.getText().toString());
-                vwtxt.setText(""+(currNum++));
+                currNum +=1;
+                String newNum = ""+currNum;
+                vwtxt.setText(newNum);
 
             }
         };
@@ -75,20 +77,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 String sizeKey = "sizex4";
-                Snackbar togglePopUp = Snackbar.make(scrn, R.string.snackBarTxt, Snackbar.LENGTH_SHORT);
-                togglePopUp.show();
+                String bartxt= getString(R.string.snackBarTxt) + " "+seekBar.getProgress();
+                SharedPreferences myPrefs = getSharedPreferences(prefTag, Context.MODE_PRIVATE);
+                int oldSize = myPrefs.getInt(sizeKey, 40);
+                Snackbar togglePopUp = Snackbar.make(scrn, bartxt, Snackbar.LENGTH_SHORT);
+                myPrefsEditor.putInt(sizeKey, seekBar.getProgress());
+                myPrefsEditor.apply();
                 togglePopUp.setAction(R.string.undoAction, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        txt1.setTextSize(10); txt2.setTextSize(10); btn1.setTextSize(10); btn2.setTextSize(10);
-                        SharedPreferences myPrefs = getSharedPreferences(prefTag, Context.MODE_PRIVATE);
-                        myPrefs.getInt(sizeKey, 40);
+                        seekBar.setProgress(oldSize);
+                        txt1.setTextSize(oldSize); txt2.setTextSize(oldSize); btn1.setTextSize(oldSize); btn2.setTextSize(oldSize);
+                        myPrefsEditor.putInt(sizeKey, oldSize);
+                        myPrefsEditor.apply();
                     }
                 });
+                togglePopUp.show();
 
-                myPrefsEditor.putInt(sizeKey, seekBar.getProgress());
-                myPrefsEditor.apply();
-                //TODO fix 4view listener, long click listener, shared pref undo action
+                //TODO fix txtview in the center clicker
                 //TODO stylize snack pop up https://material.io/components/snackbars/android#anatomy-and-key-properties
                 //TODO stylize seek bar https://www.zoftino.com/android-seekbar-and-custom-seekbar-examples
                 //TODO toast clicks per sec
