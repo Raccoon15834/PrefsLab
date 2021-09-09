@@ -2,6 +2,8 @@ package das.anusha.prefslab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,10 +19,15 @@ public class MainActivity extends AppCompatActivity {
     Button btn1, btn2;
     GridLayout scrn;
     SeekBar toggle;
+    SharedPreferences.Editor myPrefsEditor;
+    String prefTag = "das.anusha.prefslab.savedVals";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences myPrefs= getSharedPreferences(prefTag, Context.MODE_PRIVATE);
+        myPrefsEditor = myPrefs.edit();
 
         txt1 = (TextView) findViewById(R.id.txtOne);
         txt2 = (TextView) findViewById(R.id.txtTwo);
@@ -67,19 +74,24 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                String sizeKey = "sizex4";
                 Snackbar togglePopUp = Snackbar.make(scrn, R.string.snackBarTxt, Snackbar.LENGTH_SHORT);
                 togglePopUp.show();
                 togglePopUp.setAction(R.string.undoAction, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         txt1.setTextSize(10); txt2.setTextSize(10); btn1.setTextSize(10); btn2.setTextSize(10);
+                        SharedPreferences myPrefs = getSharedPreferences(prefTag, Context.MODE_PRIVATE);
+                        myPrefs.getInt(sizeKey, 40);
                     }
                 });
-                //TODO fix 4view listener, long click listener
-                //TODO shared pref to undo size
-                //TODO stylize https://material.io/components/snackbars/android#anatomy-and-key-properties
+
+                myPrefsEditor.putInt(sizeKey, seekBar.getProgress());
+                myPrefsEditor.apply();
+                //TODO fix 4view listener, long click listener, shared pref undo action
+                //TODO stylize snack pop up https://material.io/components/snackbars/android#anatomy-and-key-properties
                 //TODO stylize seek bar https://www.zoftino.com/android-seekbar-and-custom-seekbar-examples
-                //toast clicks per sec
+                //TODO toast clicks per sec
             }
         });
     }
