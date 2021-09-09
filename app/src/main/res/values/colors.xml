@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <color name="whiteTan">#E5D3B3</color>
+    <color name="lightBeige">#D2B48C</color>
+    <color name="fern">#5DBB63</color>
+    <color name="emerald">#028A0F</color>
+    <color name="medBrown">#987554</color>
+    <color name="darkBrown">#664229</color>
 </resources>

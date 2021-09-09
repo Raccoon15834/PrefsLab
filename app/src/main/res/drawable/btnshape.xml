@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:innerRadius="20dp">
+    <gradient
+        android:type="linear"
+        android:angle="180"
+        android:startColor="@color/fern"
+        android:centerColor="@color/whiteTan"
+        android:endColor="@color/darkBrown" />
+
+    <!--https://guides.codepath.com/android/drawables-->
+    <!--https://developer.android.com/guide/topics/resources/drawable-resource#Shape-->
+    <!--https://betterprogramming.pub/shape-drawables-the-most-powerful-tool-for-your-android-ui-e5c2b1ab9eef-->
+</shape>
