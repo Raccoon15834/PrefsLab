@@ -38,7 +38,7 @@
             android:layout_columnWeight="1"
             android:textSize="40sp"
             android:text="@string/defNum"
-            android:background="@drawable/btnshape"/>
+            android:background="@drawable/btnlayers"/>
 
         <Button
             android:id="@+id/btnTwo"
@@ -49,7 +49,7 @@
             android:layout_columnWeight="1"
             android:textSize="40sp"
             android:text="@string/defNum"
-            android:background="@drawable/btnshape"/>
+            android:background="@drawable/btnlayers" />
 
         <TextView
             android:id="@+id/txtTwo"
@@ -71,7 +71,8 @@
             android:padding="20dp"
             android:max="65"
             android:min="10"
-            android:progress="40"/>
+            android:progress="40"
+            android:background="@drawable/seekhover"/>
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

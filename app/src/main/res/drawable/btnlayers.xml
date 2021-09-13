@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="linear"
+                android:angle="180"
+                android:startColor="@color/fern"
+                android:centerColor="@color/whiteTan"
+                android:endColor="@color/darkBrown" />
+
+            <stroke
+                android:color="@color/fern"
+                android:width="15dp"/>
+
+            <!--shape (oval rect ring line) for other shapes, src drawable vector?-->
+            <!--gradient/solid=color, padding=around-view, stroke=outline, corner=set-rounded-radius, size-->
+            <!-- special layer list=, special selector-xml= `-->
+            <!--set drawable as style, can make selector-xml for diff items in diff states-->
+            <!--https://developer.android.com/guide/topics/resources/drawable-resource#Shape-->
+        </shape>
+    </item>
+    <item
+        android:drawable="fore"
+        android:gravity="center"
+        android:width="20dp"
+        android:height="20dp">
+    </item>
+</layer-list>
