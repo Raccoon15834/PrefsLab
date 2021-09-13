@@ -94,10 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 });
                 togglePopUp.show();
 
-                //TODO fix txtview in the center clicker
-                //TODO stylize snack pop up https://material.io/components/snackbars/android#anatomy-and-key-properties
-                //TODO stylize seek bar https://www.zoftino.com/android-seekbar-and-custom-seekbar-examples
-                //TODO toast clicks per sec
             }
         });
     }

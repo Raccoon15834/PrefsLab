@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item>
         <shape android:shape="oval">
             <gradient
                 android:type="linear"
                 android:angle="180"
-                android:startColor="@color/fern"
-                android:centerColor="@color/whiteTan"
+                android:startColor="@color/whiteTan"
+                android:centerColor="@color/fern"
                 android:endColor="@color/darkBrown" />
 
             <stroke
@@ -21,9 +22,10 @@
         </shape>
     </item>
     <item
-        android:drawable="fore"
+        android:drawable="@drawable/ic_action_name"
         android:gravity="center"
-        android:width="20dp"
-        android:height="20dp">
+        android:width="150dp"
+        android:height="150dp">
     </item>
+
 </layer-list>

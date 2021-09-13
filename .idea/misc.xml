@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/1558343/AndroidStudioProjects/PrefsLab/app/src/main/res/drawable/btnlayers.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/1558343/AndroidStudioProjects/PrefsLab/app/src/main/res/drawable/btnshape.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/1558343/AndroidStudioProjects/PrefsLab/app/src/main/res/drawable/seekhover.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/1558343/AndroidStudioProjects/PrefsLab/app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>
